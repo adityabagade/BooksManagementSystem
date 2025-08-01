@@ -8,9 +8,12 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IBookService, BookService>();
 
-var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
-builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
 
+
+builder.WebHost.ConfigureKestrel(serverOptions =>
+{
+    serverOptions.ListenAnyIP(10000); // Port Render uses
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
