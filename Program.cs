@@ -10,10 +10,11 @@ builder.Services.AddScoped<IBookService, BookService>();
 
 
 
+var port = Environment.GetEnvironmentVariable("PORT") ?? "10000";
 builder.WebHost.ConfigureKestrel(serverOptions =>
 {
-    serverOptions.ListenAnyIP(10000); // Port Render uses
-});
+    serverOptions.ListenAnyIP(Int32.Parse(port));
+}); 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
