@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container mt-5">
+    <div class="card border-0 shadow-lg rounded-4 bg-white text-center p-5">
+        <div class="card-body">
+            <h1 class="display-4 fw-semibold text-dark mb-3">
+                <i class="bi bi-person-badge fs-1 text-primary me-2"></i> Welcome to Books Inventory
+            </h1>
+            <p class="lead text-secondary mb-4">Track, manage, and update Books data effortlessly.</p>
+
+            <a asp-controller="Create" asp-action="Index" class="btn btn-primary btn-lg px-4 rounded-pill shadow-sm">
+                <i class="bi bi-people-fill me-2"></i> View Books List
+            </a>
+        </div>
+    </div>
+</div>
+
+

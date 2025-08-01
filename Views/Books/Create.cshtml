@@ -1,0 +1,49 @@
+﻿@model BooksManagementSystem.Models.Books
+
+@{
+    ViewData["Title"] = "Add Employee";
+}
+
+<div class="container my-5">
+    <div class="card shadow border-0 rounded-5">
+        <div class="card-header bg-white border-bottom-0 rounded-top-5 px-4 py-4">
+            <h3 class="fw-bold mb-0 text-dark">
+                <i class="bi bi-person-plus me-2 text-primary"></i> Add Employee
+            </h3>
+        </div>
+        <div class="card-body px-5 py-4 bg-light rounded-bottom-5">
+            <form asp-action="Create" method="post">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <label asp-for="Id" class="form-label text-muted fw-semibold">Employee ID</label>
+                        <input asp-for="Id" class="form-control form-control-lg rounded-4 shadow-sm" placeholder="e.g. 101" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="Name" class="form-label text-muted fw-semibold">Full Name</label>
+                        <input asp-for="Name" class="form-control form-control-lg rounded-4 shadow-sm" placeholder="e.g. Jane Doe" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="Description" class="form-label text-muted fw-semibold">Email Address</label>
+                        <input asp-for="Description" type="email" class="form-control form-control-lg rounded-4 shadow-sm" placeholder="name@example.com" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="Description" class="form-label text-muted fw-semibold">Salary (₹)</label>
+                        <input asp-for="Description" type="number" class="form-control form-control-lg rounded-4 shadow-sm" placeholder="e.g. 50000" />
+                    </div>
+                </div>
+
+                <div class="mt-5 d-flex justify-content-end gap-3">
+                    <a asp-action="Index" class="btn btn-outline-dark rounded-pill px-4 py-2">
+                        <i class="bi bi-arrow-left me-1"></i> Cancel
+                    </a>
+                    <button type="submit" class="btn btn-dark rounded-pill px-4 py-2">
+                        <i class="bi bi-check2-circle me-1"></i> Save
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
