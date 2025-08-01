@@ -14,6 +14,7 @@ namespace BooksManagementSystem.Controllers
             _service = service;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             List<Books> Books = _service.GetAllBooks();
